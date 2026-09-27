@@ -10,15 +10,11 @@ parent(tom, sue). parent(tom, jim). % all childern of tom
 
 mother(X,Y):- female(X), parent(X,Y).
 father(X,Y):- male(X), parent(X,Y).
-
-% parent(X, jim).
-% mother(mary, Y).
-
 sibling(X,Y):- parent(Z, X), parent(Z, Y).
-
 grandmother(X,Y):- mother(X, Z), parent(Z, Y).
-
-% grandmother(X, jim).
 
 offspring(X,Y):- parent(Y,X).
 offspring(X,Y):- parent(Z,X), offspring(Z, Y).
+
+:- op(1150, xfx, mother).
+:- op(1150, xfx, offspring).
