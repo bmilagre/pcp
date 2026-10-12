@@ -8,7 +8,7 @@ parent(mia, ann). % all childern of mia
 parent(tina, sue). parent(tina, jim). % all childern of tina
 parent(tom, sue). parent(tom, jim). % all childern of tom
 
-mother(X,Y):- female(X), parent(X,Y).
+mother(X,Y):- female(X), parent(X,Y). % r1
 father(X,Y):- male(X), parent(X,Y).
 
 % parent(X, jim).
@@ -16,9 +16,11 @@ father(X,Y):- male(X), parent(X,Y).
 
 sibling(X,Y):- parent(Z, X), parent(Z, Y).
 
-grandmother(X,Y):- mother(X, Z), parent(Z, Y).
+grandmother(X,Y):- mother(X, Z), parent(Z, Y). %r2
 
 % grandmother(X, jim).
 
 offspring(X,Y):- parent(Y,X).
-offspring(X,Y):- parent(Z,X), offspring(Z, Y).
+offspring(X,Y):- parent(Z,X), offspring(Z, Y). % r3
+
+:- op(1150, xfx, offspring).
