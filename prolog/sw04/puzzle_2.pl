@@ -10,4 +10,4 @@ donald_gerald_robert([D,O,N,A,L,D] + [G,E,R,A,L,D] = [R,O,B,E,R,T]) :-
   R #\=0, G #\=0, D #\=0,
   label(Vars).
 
-% donald_gerald_robert(As + Bs = Cs).
+% donald_gerald_robert(As + Bs = Cs). 

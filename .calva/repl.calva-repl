@@ -1,0 +1,621 @@
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(+ (* 2 3) (/ 3 4))
+clj꞉pcp.sw05.check꞉> 
+(type (+ (* 2 3) (/ 3 4)))
+clj꞉pcp.sw05.check꞉> 
+(+ (* 2 3) (/ 3 4))
+clj꞉pcp.sw05.check꞉> 
+(+ (* 2 3) (/ 3 4))
+clj꞉pcp.sw05.check꞉> 
+(type (+ (* 2 3) (/ 3 4)))
+clj꞉pcp.sw05.check꞉> 
+(+ - * /)
+; Execution error (ClassCastException) at pcp.sw05.check/eval10265 (check.clj:7).
+; class clojure.core$_ cannot be cast to class java.lang.Number (clojure.core$_ is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉pcp.sw05.check꞉> 
+'(+ - * /)
+clj꞉pcp.sw05.check꞉> 
+(str 1.0 2 true)
+clj꞉pcp.sw05.check꞉> 
+(str 1.0 2 true)
+clj꞉pcp.sw05.check꞉> 
+(type '(+ - * /))
+clj꞉pcp.sw05.check꞉> 
+(type '(+ - * /))
+clj꞉pcp.sw05.check꞉> 
+(str 1.0 2 true)
+clj꞉pcp.sw05.check꞉> 
+(type (str 1.0 2 true))
+clj꞉pcp.sw05.check꞉> 
+(+ (parse-long "123") (parse-double "0.45"))
+clj꞉pcp.sw05.check꞉> 
+(type (+ (parse-long "123") (parse-double "0.45")))
+clj꞉pcp.sw05.check꞉> 
+(or "this" "is" "crazy")
+clj꞉pcp.sw05.check꞉> 
+(or "this" "is" "crazy")
+clj꞉pcp.sw05.check꞉> 
+(type (or "this" "is" "crazy"))
+clj꞉pcp.sw05.check꞉> 
+(and "this" "is" "crazy")
+clj꞉pcp.sw05.check꞉> 
+(type (and "this" "is" "crazy"))
+clj꞉pcp.sw05.check꞉> 
+(and "this" "is" 2)
+clj꞉pcp.sw05.check꞉> 
+(and "this" "is" 2)
+clj꞉pcp.sw05.check꞉> 
+(not "this" "is" "crazy")
+; Execution error (ArityException) at pcp.sw05.check/eval10372 (check.clj:30).
+; Wrong number of args (3) passed to: clojure.core/not
+clj꞉pcp.sw05.check꞉> 
+(type (not "this" "is" "crazy"))
+; Execution error (ArityException) at pcp.sw05.check/eval10374 (check.clj:32).
+; Wrong number of args (3) passed to: clojure.core/not
+clj꞉pcp.sw05.check꞉> 
+((fn [x] (/ 1 x)) (/ 5 2))
+clj꞉pcp.sw05.check꞉> 
+(type ((fn [x] (/ 1 x)) (/ 5 2)))
+clj꞉pcp.sw05.check꞉> 
+(int? 3000000000)
+clj꞉pcp.sw05.check꞉> 
+(type (int? 3000000000))
+clj꞉pcp.sw05.check꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 25) "warm"
+  (> temperatur 15) "mittel"
+  :else "kalt")
+; Syntax error compiling at (clojure/src/pcp/sw05/conditions.clj:4:3).
+; Unable to resolve symbol: temperatur in this context
+clj꞉pcp.sw05.conditions꞉> 
+100
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 25) "warm"
+  (> temperatur 15) "mittel"
+  :else "kalt")
+; Syntax error compiling at (clojure/src/pcp/sw05/conditions.clj:6:3).
+; Unable to resolve symbol: temperatur in this context
+clj꞉pcp.sw05.conditions꞉> 
+(def temperatur 100)
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 25) "warm"
+  (> temperatur 15) "mittel"
+  :else "kalt")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 15) "mittel"
+  :else "kalt"
+  (> temperatur 25) "warm")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 15) "mittel"
+  :else "kalt"
+  (> temperatur 25) "warm")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 15) "mittel"
+  :else "kalt"
+  (> temperatur 25) "warm")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 15) "mittel"
+  :else "kalt"
+  (> temperatur 25) "warm")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (> temperatur 35) "heiss"
+  (> temperatur 15) "mittel"
+  (> temperatur 25) "warm"
+  :else "kalt")
+clj꞉pcp.sw05.conditions꞉> 
+(cond 
+  (> temperatur 15) "mittel"
+  (> temperatur 35) "heiss"
+  (> temperatur 25) "warm"
+  :else "kalt")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+; Syntax error compiling at (clojure/src/pcp/sw05/conditions.clj:15:10).
+; Unable to resolve symbol: zahl in this context
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+; Syntax error compiling at (clojure/src/pcp/sw05/conditions.clj:17:10).
+; Unable to resolve symbol: zahl in this context
+clj꞉pcp.sw05.conditions꞉> 
+(def zahl 100)
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(def zahl 70)
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+"durch 2 teilbar"
+clj꞉pcp.sw05.conditions꞉> 
+"durch 3 teilbar"
+clj꞉pcp.sw05.conditions꞉> 
+"durch 3 teilbar"
+clj꞉pcp.sw05.conditions꞉> 
+"durch 2 teilbar"
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(def zahl 1)
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(def zahl 6)
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 3)) "durch 3 teilbar"
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond 
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond 
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond 
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(cond 
+  (zero? (rem zahl 3)) "durch 3 teilbar" 
+  (zero? (rem zahl 2)) "durch 2 teilbar"
+  :else "weder durch 2 noch durch 3 teilbar")
+clj꞉pcp.sw05.conditions꞉> 
+(if (> temperatur 35) "heiss" (if (> temperatur 25) "warm" (if (> temperatur 15) "mittel" "kalt")))
+clj꞉pcp.sw05.conditions꞉> 
+(if (> temperatur 35) "heiss" (if (> temperatur 25) "warm" (if (> temperatur 15) "mittel" "kalt")))
+clj꞉pcp.sw05.conditions꞉> 
+(def temperatur 15)
+clj꞉pcp.sw05.conditions꞉> 
+(if (> temperatur 35) "heiss" (if (> temperatur 25) "warm" (if (> temperatur 15) "mittel" "kalt")))
+clj꞉pcp.sw05.conditions꞉> 
+(defn discriminant [a,b, c] (- b^2 (* 4 a c)))
+; Syntax error reading source at (REPL:30:35).
+; Metadata must be Symbol,Keyword,String,Vector or Map
+clj꞉pcp.sw05.conditions꞉> 
+(defn quadraticFormula [a,b,c] (if (< discriminant(a,b,c) 0) false true))
+; Syntax error compiling at (clojure/src/pcp/sw05/conditions.clj:31:36).
+; Unable to resolve symbol: discriminant in this context
+clj꞉pcp.sw05.conditions꞉> 
+(defn discriminant [a,b, c] (- (* b b) (* 4 a c)))
+clj꞉pcp.sw05.conditions꞉> 
+(defn discriminant [a,b, c] (- (* b b) (* 4 a c)))
+clj꞉pcp.sw05.conditions꞉> 
+(defn quadraticFormula [a,b,c] (if (< discriminant(a,b,c) 0) false true))
+clj꞉pcp.sw05.conditions꞉> 
+(defn quadraticFormula [a,b,c] (if (< discriminant(a,b,c) 0) false true))
+clj꞉pcp.sw05.conditions꞉> 
+(quadraticFormula(3,5,6))
+; Execution error (ClassCastException) at pcp.sw05.conditions/eval10510 (conditions.clj:33).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉pcp.sw05.conditions꞉> 
+(defn quadraticFormula [a,b,c] (if (< discriminant [a,b,c] 0) false true))
+clj꞉pcp.sw05.conditions꞉> 
+(quadraticFormula(3,5,6))
+; Execution error (ClassCastException) at pcp.sw05.conditions/eval10513 (conditions.clj:33).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉pcp.sw05.conditions꞉> 
+(defn discriminant [a b c]
+  (- (* b b) (* 4 a c)))
+clj꞉pcp.sw05.conditions꞉> 
+(defn quadraticFormula [a b c]
+  (if (< (discriminant a b c) 0)
+    false
+    true))
+clj꞉pcp.sw05.conditions꞉> 
+(quadraticFormula(3,5,6))
+; Execution error (ClassCastException) at pcp.sw05.conditions/eval10517 (conditions.clj:38).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉pcp.sw05.conditions꞉> 
+(defn quadraticFormula [a b c]
+  (if (< (discriminant a b c) 0)
+    false
+    true))
+clj꞉pcp.sw05.conditions꞉> 
+(quadraticFormula 3 4 6)
+clj꞉pcp.sw05.conditions꞉> 
+(quadraticFormula 1 6 -12)
+clj꞉pcp.sw05.conditions꞉> 
+(quadraticFormula 1 6 -12)
+; Syntax error compiling at (clojure/src/pcp/sw05/quadraticFormula.clj:11:1).
+; Unable to resolve symbol: quadraticFormula in this context
+clj꞉quadraticFormula꞉> 
+(defn quadraticFormula [a b c]
+  (if (< (discriminant a b c) 0)
+    false
+    true))
+; Syntax error compiling at (clojure/src/pcp/sw05/quadraticFormula.clj:7:10).
+; Unable to resolve symbol: discriminant in this context
+clj꞉quadraticFormula꞉> 
+(defn discriminant [a b c]
+  (- (* b b) (* 4 a c)))
+clj꞉quadraticFormula꞉> 
+(defn quadraticFormula [a b c]
+  (if (< (discriminant a b c) 0)
+    false
+    true))
+clj꞉quadraticFormula꞉> 
+(quadraticFormula 1 6 -12)
+clj꞉quadraticFormula꞉> 
+(quadraticFormula 3 1 1)
+clj꞉quadraticFormula꞉> 
+(quadraticFormulaSolvable 1 6 -12)
+; Syntax error compiling at (clojure/src/pcp/sw05/quadraticFormula.clj:11:1).
+; Unable to resolve symbol: quadraticFormulaSolvable in this context
+clj꞉quadraticFormula꞉> 
+(defn quadraticFormulaSolvable [a b c]
+  (if (< (discriminant a b c) 0)
+    false
+    true))
+clj꞉quadraticFormula꞉> 
+(quadraticFormulaSolvable 1 6 -12)
+clj꞉quadraticFormula꞉> 
+(quadraticFormulaSolvable 1 6 -12)
+clj꞉quadraticFormula꞉> 
+(quadraticFormulaSolvable 3 1 1)
+clj꞉quadraticFormula꞉> 
+(defn numberOfSolutions [a b c]
+  (if (not (quadraticFormulaSolvable a b c)) false (
+        cond 
+        (> D 0) 2
+        (= D 0) 1
+        (> D 0) 0                                                          
+  )))
+; Syntax error compiling at (clojure/src/pcp/sw05/quadraticFormula.clj:18:9).
+; Unable to resolve symbol: D in this context
+clj꞉quadraticFormula꞉> 
+(defn numberOfSolutions [a b c]
+  (let [d (discriminant a b c)]
+    (cond
+      (> d 0) 2
+      (= d 0) 1
+      :else   0)))
+clj꞉quadraticFormula꞉> 
+(numberOfSolutions 1 6 -12)
+clj꞉quadraticFormula꞉> 
+(numberOfSolutions 3 1 1 )
+clj꞉quadraticFormula꞉> 
+(numberOfQuadraticSolutions 1 0 -4)
+; Syntax error compiling at (clojure/src/pcp/sw05/quadraticFormula.clj:23:1).
+; Unable to resolve symbol: numberOfQuadraticSolutions in this context
+clj꞉quadraticFormula꞉> 
+(defn numberOfQuadraticSolutions [a b c]
+  (let [d (discriminant a b c)]
+    (cond
+      (> d 0) 2
+      (= d 0) 1
+      :else   0)))
+clj꞉quadraticFormula꞉> 
+(numberOfQuadraticSolutions 1 0 -4)
+clj꞉quadraticFormula꞉> 
+(numberOfQuadraticSolutions 1 2 1)
+clj꞉quadraticFormula꞉> 
+(numberOfQuadraticSolutions 1 0 4)
+clj꞉quadraticFormula꞉> 
+(quadraticFormula 1 0 -4)
+clj꞉quadraticFormula꞉> 
+(quadraticFormula 1 2 1)
+clj꞉quadraticFormula꞉> 
+(quadraticFormula 1 0 4)
+clj꞉quadraticFormula꞉> 
+(defn quadraticFormula [a b c]
+  (if (not (quadraticFormulaSolvable a b c))
+    []
+    (let [d (discriminant a b c)]
+      (if (= d 0)
+        [(/ (- b) (* 2 a))]
+        (let [sqrt-d (Math/sqrt d)]
+          [(/ (+ (- b) sqrt-d) (* 2 a))
+           (/ (- (- b) sqrt-d) (* 2 a))])))))
+clj꞉quadraticFormula꞉> 
+(def c 'b)
+clj꞉pcp.sw05.evaluation꞉> 
+(def b 'a)
+clj꞉pcp.sw05.evaluation꞉> 
+(def a '(* 3 4))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval c)
+clj꞉pcp.sw05.evaluation꞉> 
+(eval c)
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (c))
+; Execution error (ArityException) at pcp.sw05.evaluation/eval10633 (evaluation.clj:7).
+; Wrong number of args (0) passed to: clojure.lang.Symbol
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval c))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval c))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(def c 'b)
+clj꞉pcp.sw05.evaluation꞉> 
+(def b 'a)
+clj꞉pcp.sw05.evaluation꞉> 
+(def a '(* 3 4))
+clj꞉pcp.sw05.evaluation꞉> 
+(a)
+; Execution error (ClassCastException) at pcp.sw05.evaluation/eval10651 (evaluation.clj:8).
+; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉pcp.sw05.evaluation꞉> 
+(a)
+; Execution error (ClassCastException) at pcp.sw05.evaluation/eval10653 (evaluation.clj:8).
+; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(eval a)
+clj꞉pcp.sw05.evaluation꞉> 
+(eval (eval (eval c)))
+clj꞉pcp.sw05.evaluation꞉> 
+(defn converter [chf]
+  (* chf 1.0825))
+clj꞉pcp.sw05.functions꞉> 
+(converter 20)
+clj꞉pcp.sw05.functions꞉> 
+(moneyConverter 20)
+; Syntax error compiling at (clojure/src/pcp/sw05/functions.clj:6:1).
+; Unable to resolve symbol: moneyConverter in this context
+clj꞉pcp.sw05.functions꞉> 
+(defn moneyConverter [chf]
+  (* chf 1.0825))
+clj꞉pcp.sw05.functions꞉> 
+(moneyConverter 20)
+clj꞉pcp.sw05.functions꞉> 
+(defn celsiusToFahrenheitConverter [celsius]
+  (+ 32 (* celsius (/ 9 5))))
+clj꞉pcp.sw05.functions꞉> 
+30
+clj꞉pcp.sw05.functions꞉> 
+(defn celsiusToFahrenheitConverter [celsius]
+  (+ 32 (* celsius (/ 9 5))))
+clj꞉pcp.sw05.functions꞉> 
+(defn celsiusToFahrenheitConverter [celsius]
+  (+ 32 (* celsius (/ 9 5))))
+clj꞉pcp.sw05.functions꞉> 
+(celsiusToFahrenheitConverter 30)
+clj꞉pcp.sw05.functions꞉> 
+(celsiusToFahrenheitConverter 30)
+clj꞉pcp.sw05.functions꞉> 
+(defn celsiusToFahrenheitConverter [celsius]
+  (+ 32 (* celsius (/ 9 5))))
+clj꞉pcp.sw05.functions꞉> 
+(celsiusToFahrenheitConverter 30)
+clj꞉pcp.sw05.functions꞉> 
+(celsiusToFahrenheitConverter 12)
+clj꞉pcp.sw05.functions꞉> 
+(celsiusToFahrenheitConverter 14)
+clj꞉pcp.sw05.functions꞉> 
+(defn celsiusToFahrenheitConverter [celsius]
+  (+ 32 (* celsius (/ 9 5))))
+clj꞉pcp.sw05.functions꞉> 
+(celsiusToFahrenheitConverter 14)
+clj꞉pcp.sw05.functions꞉> 
+(defn celsiusToFahrenheitConverter [celsius]
+  (+ 32 (* celsius 1.8)))
+clj꞉pcp.sw05.functions꞉> 
+(celsiusToFahrenheitConverter 14)
+clj꞉pcp.sw05.functions꞉> 
+(defn scale [x1 x2 y1 y2 x]
+  (+ y1 (* (/ (- x x1) (- x2 x1))
+           (- y2 y1))))
+clj꞉pcp.sw05.functions꞉> 
+(scale 0.0 100.0 32.0 212.0 30.0)
+clj꞉pcp.sw05.functions꞉> 
+(defn sum-range [a b]
+  (when (<= a b)
+    (println a)
+    (sum-range (inc a) b)))
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 1 5)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 1 5)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 1 5)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 1 5)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 3 9)
+clj꞉pcp.sw05.recursive꞉> 
+(defn sum-range [a b]
+  (when (<= a b)
+    (sum-range (inc a) b)
+    (println a)))
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 1 5)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 3 9)
+clj꞉pcp.sw05.recursive꞉> 
+(defn sum-range [a b]
+  (if (> a b)
+    0
+    (+ a (sum-range (inc a) b))))
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 1 5)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 3 9)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 3 9)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 3 9)
+clj꞉pcp.sw05.recursive꞉> 
+(sum-range 1 5)
+clj꞉pcp.sw05.recursive꞉> 
+(defn sum-square [a b]
+  (if (> a b)
+   0
+   (+ a (* (sum-square (inc a) b) (sum-square (inc a) b))) 
+    ))
+clj꞉pcp.sw05.recursive꞉> 
+(sum-squares 1 4)
+; Syntax error compiling at (clojure/src/pcp/sw05/recursive.clj:19:1).
+; Unable to resolve symbol: sum-squares in this context
+clj꞉pcp.sw05.recursive꞉> 
+(defn sum-squares [a b]
+  (if (> a b)
+   0
+   (+ a (* (sum-square (inc a) b) (sum-square (inc a) b))) 
+    ))
+clj꞉pcp.sw05.recursive꞉> 
+(sum-squares 1 4)
+clj꞉pcp.sw05.recursive꞉> 
+(defn sum-squares [a b]
+  (if (> a b)
+   0
+   (+ (* a a) (sum-squares (inc a) b))))
+clj꞉pcp.sw05.recursive꞉> 
+(sum-squares 1 4)
+clj꞉pcp.sw05.recursive꞉> 
+(defn sequenceOfNumbers [n]
+  (if (> n 1)
+    println(n)
+    ))
+clj꞉pcp.sw05.recursive꞉> 
+(defn sequenceOfNumbers [n]
+  (if (> n 1)
+    (do
+      (println(n))
+      (if (even? n)
+        (sequenceOfNumbers (/ n 2))
+        (sequenceOfNumbers (+ 1 (* 3 n)))
+        ))))
+clj꞉pcp.sw05.recursive꞉> 
+(sequenceOfNumbers 3)
+; Execution error (ClassCastException) at pcp.sw05.recursive/sequenceOfNumbers (recursive.clj:25).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉pcp.sw05.recursive꞉> 
+(defn sequence-of-numbers [n]
+  (when (> n 1)
+    (println n)
+    (if (even? n)
+      (sequence-of-numbers (/ n 2))
+      (sequence-of-numbers (+ (* 3 n) 1)))))
+clj꞉pcp.sw05.recursive꞉> 
+(sequenceOfNumbers 3)
+; Execution error (ClassCastException) at pcp.sw05.recursive/sequenceOfNumbers (recursive.clj:25).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉pcp.sw05.recursive꞉> 
+(defn sequenceOfNumbers [n]
+  (when (> n 1)
+    (println n)
+    (if (even? n)
+      (sequenceOfNumbers (/ n 2))
+      (sequenceOfNumbers (+ (* 3 n) 1)))))
+clj꞉pcp.sw05.recursive꞉> 
+(sequenceOfNumbers 3)
+clj꞉pcp.sw05.recursive꞉> 
+(sequenceOfNumbers 7)
+clj꞉pcp.sw05.recursive꞉> 
