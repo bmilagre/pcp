@@ -1,4 +1,4 @@
-(ns pcp.sw05.evaluation)
+(ns pcp.sw05.aufg6)
 
 ;; Aufgabe 6
 (def a '(* 3 4))

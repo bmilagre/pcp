@@ -1,14 +1,15 @@
-(ns pcp.sw05.expressions)
+(ns pcp.sw05.aufg2)
 
 ;; Aufgabe 2a
 (def laenge 4)
+
 (def breite 3)
 
 ;; Fläche: Länge * Breite
 (* laenge breite)
 
 ;; Umfang: 2 * (Länge + Breite)
-(* 2 (+ laenge breite))
+(* 2 (+ breite laenge))
 
 ;; Diagonale: Wurzel aus (Länge^2 + Breite'2), https://clojuredocs.org/clojure.math/sqrt
 (Math/sqrt (+ (* laenge laenge) (* breite breite)))
@@ -19,10 +20,10 @@
 (def hohe 3)
 
 ;; Volumen: a * b * c
-(* laenge breite hohe)
+(* 2 (+ (* laenge breite) (* laenge hohe) (* breite hohe)))
 
 ;; Öberfläche 2 * (a * b + a * c + b * c)
-(* 2 (+ (* laenge breite) (* laenge hohe) (* breite hohe)))
+(* laenge breite hohe)
 
 ;; Aufgabe 2c
 (defn area [a, b] (* a b))

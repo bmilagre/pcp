@@ -1,4 +1,4 @@
-(ns pcp.sw05.recursive)
+(ns pcp.sw05.aufg89)
 
 ;; Aufgabe 8
 
@@ -20,10 +20,11 @@
 ;; Aufgabe 9
 
 (defn sequenceOfNumbers [n]
-  (if (> n 1)
-    (do
-      (println(n))
-      (if (even? n)
-        (sequenceOfNumbers (/ n 2))
-        (sequenceOfNumbers (+ 1 (* 3 n)))
-        ))))
+  (when (> n 1)
+    (println n)
+    (if (even? n)
+      (sequenceOfNumbers (/ n 2))
+      (sequenceOfNumbers (+ (* 3 n) 1)))))
+
+(sequenceOfNumbers 3)
+(sequenceOfNumbers 7)

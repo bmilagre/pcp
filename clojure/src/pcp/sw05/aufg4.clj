@@ -1,4 +1,4 @@
-(ns pcp.sw05.conditions)
+(ns pcp.sw05.aufg4)
 
 ;; Aufgabe 4
 
@@ -20,10 +20,14 @@
   (zero? (rem zahl 2)) "durch 2 teilbar"
   :else "weder durch 2 noch durch 3 teilbar")
 
-;; Ja?
+;; Ja
 
 ;; Aufgabe c
-(if (> temperatur 35) "heiss" (if (> temperatur 25) "warm" (if (> temperatur 15) "mittel" "kalt")))
+(if (> temperatur 35)
+  "heiss" 
+  (if (> temperatur 25) 
+    "warm" 
+    (if (> temperatur 15) "mittel" "kalt")))
 
 ;; Aufgabe d
-Ja weil das Makro case im Hintergrund auch cond verwendet und deshalb einfach die "schönere" Variante ist
+;; Ja weil das Makro case im Hintergrund auch cond verwendet und deshalb einfach die "schönere" Variante ist

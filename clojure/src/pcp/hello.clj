@@ -33,6 +33,38 @@
 (defn countdown [n]
   (if (>= n 0)
     (do (println n)
-        (countdown(dec n)))))
+        (countdown (dec n)))))
 
-countdown(10)
+countdown (10)
+
+
+(loop [i 1])
+(when (<= i 256)
+  (println i)
+  (recur (inc i)))
+
+
+(loop [i 0 d 1]
+  (when (<= i 46)
+    (println i)
+    (recur (+ i d) (inc d))))
+
+(defn find-sums [nums target path]
+      (cond 
+        (zero? target) [path]
+        (neg? target) []
+        (empty? nums) []
+        :else
+        (concat
+         (find-sums (rest nums) (- target (first nums)) (conj path (first nums)))
+         (find-sums (rest nums) target path)
+         )
+        )
+      )
+
+
+(find-sums [1 2 3 4 5 6] 6 [])
+
+
+
+

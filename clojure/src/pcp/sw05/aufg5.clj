@@ -1,4 +1,4 @@
-(ns pcp.sw05.quadraticFormula)
+(ns pcp.sw05.aufg5)
 
 ;; Aufgabe 5a
 (defn discriminant [a b c]

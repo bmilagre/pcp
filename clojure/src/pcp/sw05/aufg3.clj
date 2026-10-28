@@ -1,4 +1,4 @@
-(ns pcp.sw05.check)
+(ns pcp.sw05.aufg3)
 
 ;; Aufgabe 3
 
@@ -9,7 +9,7 @@
 ;; Nicht gültig, nur Operatoren
 (+ - * /)
 
-;; Liste mit Operatoren -> PersistentList
+;; Liste mit Operatoren (da nicht direkt ausgewertet) -> PersistentList
 '(+ - * /)
 (type '(+ - * /))
 
